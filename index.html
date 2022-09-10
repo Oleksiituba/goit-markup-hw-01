@@ -176,36 +176,147 @@
 
 
 
-.footer-container {
+.footer {
 background-color: $footer-bgc;
 }
-.nenu-link {
+
+.footer-container {
+max-width: 1440px;
+padding-top: 32px;
+padding-bottom: 32px;
+text-align: center;
+width: 100%;
+
+@media screen and (min-width: 1440px) {
+padding-top: 40px;
+padding-bottom: 40px;
+display: flex;
+text-align: left;
+}
+
+}
+
+.logo {
+margin-bottom: 20px;
+display: flex;
+justify-content: center;
+
+@media screen and (min-width: 1440px) {
+
+margin-bottom: 0px;
+}
+
+&-img {
+width: 192px;
+height: 48px;
+background-color: black;
+}
+}
+
+.footer-content {
+
+
+@media screen and (min-width: 768px) {
+display: flex;
+
+
+}
+}
+
+.footer-menu {
+margin-bottom: 24px;
+
+@media screen and (min-width: 768px) {
+
+margin-bottom: 0px;
+}
+
+@media screen and (min-width: 1440px) {
+
+margin-left: 277px;
+}
+
+}
+
+.footer-menu-item:not(:last-child) {
+margin-bottom: 8px;
+}
+
+.footer-menu-link {
 @include font (400, 16, 1.25, 0.01em);
 color: $primary-color-text;
 }
 
-.menu-item:not(:last-child) {
+
+
+.footer-soc {
+margin-bottom: 24px;
+
+@media screen and (min-width: 768px) {
+margin-left: 52px;
+margin-bottom: 0px;
+}
+
+@media screen and (min-width: 1440px) {
+margin-left: 103px;
+
+}
+
+&-item:not(:last-child) {
 margin-bottom: 8px;
 }
 
-.footer-soc-link {
+&-link {
 @include font (400, 16, 1.25, 0.01em);
 color: $primary-color-text;
 }
-.footer-soc-item:not(:last-child) {
-margin-bottom: 8px;
 }
-.address-link {
+
+
+.footer-address {
+
+@media screen and (min-width: 768px) {
+
+text-align: right;
+margin-left: auto;
+
+}
+
+@media screen and (min-width: 1440px) {
+
+text-align: left;
+margin-left: 163px;
+
+}
+}
+
+.address-text {
 @include font (400, 16, 1.25, 0.01em);
-color : $secondary-color-text;
-}
-.address-title {
-@include font (400, 16, 1.25, 0.01em);
-}
-.address-item:not(:last-child) {
 margin-bottom: 8px;
 }
 
+
+.address-link-mail {
+
+@include font (400, 16, 1.25, 0.01em);
+color: $secondary-color-text;
+
+
+}
+
+.address-item-tell {
+margin-top: 24px;
+}
+
+.address-item-tell:not(:last-child) {
+margin-bottom: 8px;
+}
+
+.address-link-tell {
+@include font (400, 16, 1.25, 0.01em);
+color: $secondary-color-text;
+
+}
 
 
 
@@ -214,59 +325,77 @@ margin-bottom: 8px;
 <section class="footer">
     <div class="footer-container container">
         <div class="logo">
-
+            <a href="index.html">
+                <picture>
+                    <source
+                        srcset="./images/desktop/logo/logo-desktop@1x.jpg 1x,./images/desktop/logo/logo-desktop@2x.jpg 2x,./images/desktop/logo/logo-desktop@3x.jpg 3x"
+                        media="(min-width: 1200px)" />
+                    <source
+                        srcset="./images/tablet/logo/logo-footer-tablet@1x.jpg 1x,./images/tablet/logo/logo-footer-tablet@2x.jpg 2x,./images/tablet/logo/logo-footer-tablet@3x.jpg 3x"
+                        media="(min-width: 768px)" />
+                    <source
+                        srcset="./images/mobile/logo/logo-footer-mobile@1x.jpg 1x,./images/mobile/logo/logo-footer-mobile@2x.jpg 2x,./images/mobile/logo/logo-footer-mobile@3x.jpg 3x"
+                        media="(max-width: 767px)" />
+                    <img class="logo-img" src="./images/desktop/logo/logo-desktop@2x.jpg" alt="logo" />
+                </picture>
+            </a>
         </div>
-        <div class="footer-menu">
-            <ul class="menu-list">
-                <li class="menu-item">
-                    <a class="menu-link" href="">Головна</a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">3D Моделювання</a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">3D Сканування</a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">3D Друк</a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">Замовити</a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" href="">Контакти</a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-soc">
-            <ul class="footer-soc-list">
-                <li class="footer-soc-item">
-                    <a class="footer-soc-link" href="">Instagram</a>
-                </li>
-                <li class="footer-soc-item">
-                    <a class="footer-soc-link" href="">YouTube</a>
-                </li>
-                <li class="footer-soc-item">
-                    <a class="footer-soc-link" href="">Facebook</a>
-                </li>
-        </div>
-        <div class="footer-address">
-            <address class="address">
-                <ul class="address-list">
-                    <li class="address-item">
-                        <h2 class="address-title">Email</h2> <a class="address-link"
-                            href="+38 (093) 643 22 88">3dfreedom.info@gmail.com</a>
+        <div class="footer-content">
+            <div class="footer-menu">
+                <ul class="menu-list">
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="">Головна</a>
                     </li>
-                    <li class="address-item">
-                        <h2 class="address-title">Телефони</h2> <a class="address-link" href="+38 (093) 643 22 88">+38
-                            (093) 643 22
-                            88</a>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="">3D Моделювання</a>
                     </li>
-                    <li class="address-item"> <a class="address-link" href="+38 (050) 345 44 23"> +38 (050) 345 44
-                            23</a>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="">3D Сканування</a>
+                    </li>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="">3D Друк</a>
+                    </li>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="">Замовити</a>
+                    </li>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="">Контакти</a>
                     </li>
                 </ul>
-            </address>
+            </div>
+            <div class="footer-soc">
+                <ul class="footer-soc-list">
+                    <li class="footer-soc-item">
+                        <a class="footer-soc-link" href="">Instagram</a>
+                    </li>
+                    <li class="footer-soc-item">
+                        <a class="footer-soc-link" href="">YouTube</a>
+                    </li>
+                    <li class="footer-soc-item">
+                        <a class="footer-soc-link" href="">Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-address">
+                <address class="address">
+                    <ul class="address-list">
+                        <li class="address-item-mail">
+                            <p class="address-text">Email</p> <a class="address-link-mail"
+                                href="mail:3dfreedom.info@gmail.com">3dfreedom.info@gmail.com</a>
+                        </li>
+                        <li class="address-item-tell">
+                            <p class="address-text">Телефони</p> <a class="address-link-tell"
+                                href="tell:+380936432288">+38
+                                (093) 643 22
+                                88</a>
+                        </li>
+                        <li class="address-item"> <a class="address-link-tell" href="tell:+380503454423"> +38 (050) 345
+                                44
+                                23</a>
+                        </li>
+                    </ul>
+                </address>
+            </div>
         </div>
     </div>
 </section>
